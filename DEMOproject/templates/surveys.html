@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+{% block title %}
+Customer Number
+{% endblock title %}
+
+{% block body %}
+
+<div class = "container py-4">
+    <h2 class = "text-center"><b>Debt Buddy Survey Questionnaire</b></h2>
+    <h2 class = "text-center"><b>Disclaimer:</b> As per GDPR, NatWest will not share details without Customer Consent </h2>
+
+<form method = "post" action = "/surveys">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="name">name</label>
+    <input type="name" class="form-control" id="name" name = "name" placeholder="name">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" name = "email" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="rating"><b>Are you securing your financial future</label>
+    <select class="form-control" id="rating" name = "rating">
+      <option>Completely</option>
+      <option>Very well</option>
+      <option>Somewhat</option>
+      <option>Very little</option>
+      <option>Not at all</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="major"><b>Can you handle a major unexpected financial need</label>
+    <select class="form-control" id="major" name = "major">
+      <option>Completely</option>
+      <option>Very well</option>
+      <option>Somewhat</option>
+      <option>Very little</option>
+      <option>Not at all</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="accounts"><b>Do you have sufficient money in your accounts by the end of the month</label>
+    <select class="form-control" id="accounts" name = "accounts">
+      <option>Always</option>
+      <option>Often</option>
+      <option>Sometimes</option>
+      <option>Rarely</option>
+      <option>Never</option>
+    </select>
+  </div>
+      <button class = "btn btn-primary" type = "submit">Submit</button>
+</form>
+</div>
+<div class="container-fluid px-0 mb-60">
+<img src="https://source.unsplash.com/1200x400?surveys" class="d-block w-100" alt="...">
+</div>
+{% endblock body %}

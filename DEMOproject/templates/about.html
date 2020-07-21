@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% block title %}
+Customer Number
+{% endblock title %}
+
+{% block body %}
+
+
+<div class = "container py-4">
+    <h1>Fetching the test Account info - CMA9 Account API</h1>
+<form method = "post" action = "memos">
+        {% csrf_token %}
+  <div class="form-group">
+      <span for="text"> Please put the Customer Number and hit submit <span style="color: red; font-weight: bold;">*</span></label>
+    <input type="text" name="Cust"><br>
+
+  </div>
+  <button class = "btn btn-primary" type = "submit">Submit</button>
+</form>
+<label for="exampleFormControlTextarea1"> <b>{{name1}}</b> </label>
+</div>
+<div class="container-fluid px-0 mb-60 my-4">
+<img src="https://source.unsplash.com/1200x400?number" class="d-block w-100" alt="...">
+</div>
+{% endblock body %}
+

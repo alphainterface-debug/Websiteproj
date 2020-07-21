@@ -1,0 +1,92 @@
+{% extends 'base.html'%}
+{% block title %}
+Contact |
+{% endblock title %}
+
+
+{% block body %}
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Debt Buddy!</h1>
+      <p>Debt Buddy specialises in debt management, but more importantly in getting you out of debt. We focus on a variety of debt solutions, tailored around your financial needs. View and Select our products below.</p>
+      <p>The Debt Buddy charges nominal fees of 1% on the benefit provided to the vulnerable or elligible customers, that too after 1 year of providing the service</p>
+<form action = "/surveys">
+    {% csrf_token %}
+        <button class = "btn btn-primary" type = "submit">Submit to enroll</button>
+</form>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Debt Settlement</h2>
+        <p>We can negotiate with your other credit providers in order to attain a settlement discount on all your types of debt.</p>
+
+      </div>
+
+      <div class="col-md-4">
+        <h2>Debt Remedy</h2>
+        <p>We can assist with not having adverse information on your credit report. Removal of defaults, judgements, administration etc.</p>
+
+      </div>
+      <div class="col-md-4">
+        <h2>Debt Counselling</h2>
+        <p>Assist with the Financial well-being, via effective budgeting techniques, restructuring debt as well as how to build a build a attractive credit score.</p>
+
+      </div>
+        <div class="col-md-4">
+        <h2>Financial Coaching</h2>
+        <p>Don’t only get financial help when you are in trouble but rather prevent it with your personal Financial Coach. We give you tips for income protector options, credit life swap etc.</p>
+
+      </div>
+
+   <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Unique Feature</strong>
+          <h3 class="mb-0">For Vulnerable Customers</h3>
+
+          <p class="card-text mb-auto">As a part of this add-on, medicine requirements details will be collected from the Customers and provided to the wellness provider as API</p>
+
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="10%" y="10%" fill="#eceeef" dy=".3em">Wellness Support</text></svg>
+        </div>
+      </div>
+    </div>
+
+
+   <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Add-on Feature</strong>
+          <h3 class="mb-0">Credit Score</h3>
+
+          <p class="mb-auto">An add-on feature provided are the credit scores calculated for the Customers</p>
+
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="10%" y="10%" fill="#eceeef" dy=".3em">Debt Buddy feature</text></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+    </div>
+
+    <hr>
+
+  </div> <!-- /container -->
+
+
+
+
+
+{% endblock body %}

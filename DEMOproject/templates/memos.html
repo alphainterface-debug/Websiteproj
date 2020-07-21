@@ -1,0 +1,101 @@
+{% extends 'base.html'%}
+{% block title %}
+About |
+{% endblock title %}
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table.center {
+  margin-left:auto;
+  margin-right:auto;
+}
+</style>
+</head>
+
+
+{% block body %}
+
+<div class="jumbotron">
+    <div class="container">
+      <h5 class="display-3">Account Details for the Customer!</h5>
+
+    <table style="width:100%" border = "1" class = "center">
+      <tr>
+        <th>Identification</th>
+        <th>Scheme Names</th>
+        <th>Account Name</th>
+        <th>Description</th>
+        <th>Currency</th>
+        <th>AccountType</th>
+        <th>AccountSubType</th>
+        <th>AccountId</th>
+
+      </tr>
+      {% for dest in name1 %}
+      <tr>
+        <td>{{dest.actid}}</td>
+        <td>{{dest.schname}}</td>
+        <td>{{dest.actname}}</td>
+        <td>{{dest.descname}}</td>
+        <td>{{dest.curr}}</td>
+        <td>{{dest.acttyp}}</td>
+        <td>{{dest.actsubtyp}}</td>
+        <td>{{dest.accountids}}</td>
+      </tr>
+
+      {% endfor %}
+    </table>
+
+        <p class="lead font-weight-normal"><b>{{name}}</b></p>
+ <form method = "get" action = "/surveys">
+        {% csrf_token %}
+    <button style = "margin:5px;" class = "btn btn-primary" type = "submit">Submit to enroll</button>
+ </form>
+     <form method = "post" action = "about">
+        {% csrf_token %}
+        <button style = "margin:5px;" class = "btn btn-primary" type = "submit">Go Back </button>
+     </form>
+
+  </div>
+
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 my-10 text-center bg-light">
+    <h3 class="display-4 font-weigh t-normal">Response from the Accounts API fetching transaction level information</h3>
+  <div class="p-lg-5  mx-auto my-5">
+    <table style="width:100%" border = "1" class = "center">
+
+      <tr>
+        <th>Account ID</th>
+        <th>Amount Credit/Debit</th>
+        <th>Currency</th>
+        <th>CreditDebitIndicator</th>
+        <th>DateTime</th>
+        <th>Balance Amount</th>
+      </tr>
+      {% for dest1 in name2 %}
+      <tr>
+        <td>{{dest1.balactid}}</td>
+        <td>{{dest1.cdamount}}</td>
+        <td>{{dest1.cdcurrency}}</td>
+        <td>{{dest1.cdindicator}}</td>
+        <td>{{dest1.bdtime}}</td>
+        <td>{{dest1.balamt}}</td>
+
+      </tr>
+    {% endfor %}
+    </table>
+
+
+   </div>
+</div>
+
+{% endblock body %}
+
